@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Melody Charts</title>
+    <style>
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.timeline .notebar rect {
+  fill: #7880E0;
+}
+
+.timeline .notebar:hover {
+  cursor: pointer;
+}
+
+.timeline .notebar:hover rect {
+  fill: #4351CF;
+}
+
+.grid .tick,
+.grid line {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.timebar line {
+  stroke: #23B448;
+}
+
+.timebar polygon {
+  fill: #23B448;
+}
+
+.timebar text {
+  fill: black;
+  font: 8px sans-serif;
+  text-anchor: middle;
+}
+
+.playcontrols {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+}
+
+.playcontrols button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+}
+
+.playcontrols button:hover {
+  cursor: pointer;
+  color: #4351CF;
+}
+
+.playcontrols button:disabled {
+  color: #DDDDDD;
+  cursor: not-allowed;
+}
+
+</style>
+    <script src="media-element/jquery.js"></script>
+    <script src="media-element/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="media-element/mediaelementplayer.css" />
+  </head>
+  <body>
+    <div id="app">
+      <svg class="chart"></svg>
+      <svg class="timeline"></svg>
+      <div class="playcontrols">
+        <button onclick="play()">
+        <i class="fa fa-play-circle" aria-hidden="true"></i> Play
+        </button>
+
+        <button onclick="pause()" disabled="true">
+        <i class="fa fa-pause-circle" aria-hidden="true"></i> Pause
+        </button>
+
+        <button onclick="stop()" disabled="true">
+        <i class="fa fa-stop-circle" aria-hidden="true"></i> Stop
+        </button>
+      </div>
+      <!--audio src="demo/dreams.mp3"></audio-->
+    </div>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="src/chart-play.js"></script>
+        <script>
+$('video,audio').mediaelementplayer();
+</script>
+  <script src="https://use.fontawesome.com/bf6b574d8c.js"></script>
+  </body>
+</html>
